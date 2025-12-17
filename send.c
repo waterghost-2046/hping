@@ -79,6 +79,10 @@ void send_packet (int signal_id)
 	else			send_tcp();
 
 	sent_pkt++;
+
+	if (opt_flood)
+		return;
+
 	Signal(SIGALRM, send_packet);
 
 	if (count != -1 && count == sent_pkt) { /* count reached? */

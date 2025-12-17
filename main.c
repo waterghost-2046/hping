@@ -149,6 +149,7 @@ char
 	rsign		[1024], /* reverse sign (hping -> gniph) */
 	ip_opt		[40],
 	*opt_scanports = "";
+volatile struct delaytable_element delaytable[TABLESIZE];
 
 unsigned char
 	lsr		[255] = {0},
@@ -165,7 +166,7 @@ struct sockaddr_in
 	remote;
 
 struct itimerval usec_delay;
-volatile struct delaytable_element delaytable[TABLESIZE];
+
 
 struct hcmphdr *hcmphdr_p; /* global pointer used by send_hcmp to transfer
 			      hcmp headers to data_handler */

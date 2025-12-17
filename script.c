@@ -23,7 +23,6 @@
 #include <sched.h>
 
 #include <sys/ioctl.h>
-#include <net/bpf.h>
 #include <pcap.h>
 
 #include "release.h"
